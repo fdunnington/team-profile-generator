@@ -18,6 +18,14 @@ const teamMember = [];
 const idList = [];
 
 const appMenu = () => {
+
+    //Function to write employee file
+    function writeToFile() {
+        if(!fs.existsSync(OUTPUT_DIR)) {
+            fs.mkdirSync(OUTPUT_DIR)
+        };
+        fs.writeFileSync(outputPath, render(teamMember), 'utf-8');
+    };
    
     // Function that runs when 'Engineer' selected from the createTeam() list
     // Allows for input of engineer data
@@ -96,7 +104,7 @@ const appMenu = () => {
                 message: "University/college name: "
             }
         ]).then(answers =>{
-            const intern = new Manager(
+            const intern = new Intern(
                 answers.internName, 
                 answers.internID, 
                 answers.internEmail, 
@@ -131,7 +139,7 @@ const appMenu = () => {
             } else if(userChoice.memberType === "Intern") {
                 addIntern();
             } else {
-                buildTeam();
+                writeToFile();
             }
         })
     }
@@ -193,7 +201,3 @@ appMenu();
 
 
 
-//Function to write employee file
-function writeToFile(fileName, employeeData) {
-    return fs.writeFileSync(path.join(process.cwd(), fileName), employeeData);
-};
