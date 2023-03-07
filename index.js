@@ -47,12 +47,30 @@ const inputData = () => {
             {//employee ID
                 type: "input",
                 name: "engineerID",
-                message: "Engineer's employee id: "
+                message: "Engineer's employee id: ",
+                validate: answer => {
+                    if (isNaN(answer)) {
+                        return "Please input a number";
+                    } else {
+                        return true;
+                    };
+                }
             },
             {//email
-                type: "input",
+                type: "email",
                 name: "engineerEmail",
-                message: "Engineer's email address: "
+                message: "Engineer's email address: ",
+                validate: function (email) {
+  
+                    valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+        
+                    if (valid) {
+                        return true;
+                    } else {
+                        console.log(".  Please enter a valid email")
+                        return false;
+                    }
+                }
             },
             {//office number
                 type: "input",
@@ -68,7 +86,6 @@ const inputData = () => {
             );
             teamMember.push(engineer);
             idList.push(answers.engineerID);
-            console.log(engineer);
             createTeam();
         });
     };
@@ -83,21 +100,39 @@ const inputData = () => {
                 message: "Full name: ",
                 validate: answer => {
                     if(answer !== "") {
-                        return true
+                        return true;
                     } else {
-                        return "Please enter at least one character."
-                    }
+                        return "Please enter at least one character.";
+                    };
                 }
             },
             {//employee ID
                 type: "input",
                 name: "internID",
-                message: "Employee id: "
+                message: "Employee id: ",
+                validate: answer => {
+                    if (isNaN(answer)) {
+                        return "Please input a number";
+                    } else {
+                        return true;
+                    };
+                }
             },
             {//email
-                type: "input",
+                type: "email",
                 name: "internEmail",
-                message: "Email address: "
+                message: "Email address: ",
+                validate: function (email) {
+  
+                    valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+        
+                    if (valid) {
+                        return true;
+                    } else {
+                        console.log(".  Please enter a valid email")
+                        return false;
+                    }
+                }
             },
             {//office number
                 type: "input",
@@ -114,7 +149,6 @@ const inputData = () => {
 
             teamMember.push(intern);
             idList.push(answers.internID);
-            console.log(intern)
             createTeam();
         });
     }
@@ -140,7 +174,6 @@ const inputData = () => {
             } else if(userChoice.memberType === "Intern") {
                 addIntern();
             } else {
-                console.log(teamMember[0]);
                 writeToFile();
             }
         })
@@ -169,12 +202,30 @@ const inputData = () => {
             {//employee ID
                 type: "input",
                 name: "managerID",
-                message: "Employee id: "
+                message: "Employee id: ",
+                validate: answer => {
+                    if (isNaN(answer)) {
+                        return "Please input a number";
+                    } else {
+                        return true;
+                    };
+                }
             },
             {//email
-                type: "input",
+                type: "email",
                 name: "managerEmail",
-                message: "Email address: "
+                message: "Email address: ",
+                validate: function (email) {
+  
+                    valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+        
+                    if (valid) {
+                        return true;
+                    } else {
+                        console.log(".  Please enter a valid email")
+                        return false;
+                    }
+                }
             },
             {//office number
                 type: "input",
@@ -191,11 +242,15 @@ const inputData = () => {
 
             teamMember.push(manager);
             idList.push(answers.managerID);
-            console.log(manager);
             createTeam();
+    
         });
+
     };
+
+
     addManager()
+
 
 };
 

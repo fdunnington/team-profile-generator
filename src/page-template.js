@@ -60,6 +60,7 @@ const generateTeam = team => {
     };
 
     const html = [];
+   
 
     html.push(team
         .filter(employee => employee.getRole() === "Team Lead")
@@ -70,7 +71,6 @@ const generateTeam = team => {
         .filter(employee => employee.getRole() === "Engineer")
         .map(engineer => generateEngineer(engineer))
         .join("")
-         
     );
 
     html.push(team
@@ -78,9 +78,11 @@ const generateTeam = team => {
         .map(intern => generateIntern(intern))
         .join("")
     );
-    
+
     return html.join("");
-}
+
+};
+
 
 
 // exports function to generate entire page
@@ -107,13 +109,12 @@ module.exports = team => {
                 <div class="col-12 jumbotron mb-3 team-heading">
                     <h1 class="text-center">My Team</h1>
                 </div>
+
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="team-area col-12 d-flex">
-                ${generateTeam(team)}
-                </div>
+            ${generateTeam(team)}
             </div>
         </div>
     </body>
