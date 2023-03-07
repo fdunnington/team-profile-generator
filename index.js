@@ -9,6 +9,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
+const { default: ListPrompt } = require("inquirer/lib/prompts/list");
 
 //TODO: Finally, although it’s not a requirement, consider adding validation to ensure that user input is in the proper format.
 
@@ -17,7 +18,7 @@ const render = require("./src/page-template.js");
 const teamMember = [];
 const idList = [];
 
-const appMenu = () => {
+const inputData = () => {
 
     //Function to write employee file
     function writeToFile() {
@@ -67,7 +68,7 @@ const appMenu = () => {
             );
             teamMember.push(engineer);
             idList.push(answers.engineerID);
-            console.log(engineer)
+            console.log(engineer);
             createTeam();
         });
     };
@@ -139,6 +140,7 @@ const appMenu = () => {
             } else if(userChoice.memberType === "Intern") {
                 addIntern();
             } else {
+                console.log(teamMember[0]);
                 writeToFile();
             }
         })
@@ -189,15 +191,15 @@ const appMenu = () => {
 
             teamMember.push(manager);
             idList.push(answers.managerID);
-            console.log(manager)
+            console.log(manager);
             createTeam();
         });
-
     };
-    addManager();
+    addManager()
+
 };
 
-appMenu();
+inputData();
 
 
 

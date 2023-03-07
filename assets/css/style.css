@@ -1,0 +1,64 @@
+
+:root {
+    --manager: rgb(17, 17, 37);
+    --engineer: rgb(81, 81, 142);
+    --intern: rgb(147, 147, 163);
+    --muted: rgb(218, 205, 205);
+    --textBase: rgb(17, 17, 37);
+
+}
+
+h2 {
+    font-size: 1.8em;
+    text-transform: capitalize;
+}
+
+h3 {
+   font-size: 1.2em;
+   color: var(--muted);
+}
+
+a {
+    color:rgb(29, 167, 241);
+}
+
+.bold {
+    font-weight: bold;;
+}
+
+.team-heading {
+    background-color: var(--manager);
+    color: white;
+}
+
+.team-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width:fit-content;
+    padding: 0;
+}
+
+.card {
+    text-align: center;
+    margin: 15px;
+}
+
+.list-group {
+    color: black;
+    text-align: left;
+}
+.manager-card {
+    background-color: var(--manager);
+    color: white;
+}
+
+.engineer-card {
+    background-color: var(--engineer);
+    color: white;
+}
+
+.intern-card {
+    background-color: var(--intern);
+    color: white;
+}
