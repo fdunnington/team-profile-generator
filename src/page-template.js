@@ -106,7 +106,6 @@ module.exports = team => {
             <div class="row">
                 <div class="col-12 jumbotron mb-3 team-heading">
                     <h1 class="text-center">My Team</h1>
-                    <p>Hi ${generateIntern(intern)}</p>
                 </div>
             </div>
         </div>
