@@ -3,18 +3,15 @@
 
   ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-  N/A
+
 
   ## Description:
 
   ### Motivation
-  Learning to use Node.js
-
+  The team-profile generator was a project built to demonstrate the use of Node.js to develop a command-line application that takes user-input data and    outputs an HTML file that can be viewed in the browser. The generator was also an exercise in OOP, where the .js code was written in order to pass the pre-determined Jest tests.
 
   ### Learnings
-  using node.js to build a command line application
-
-
+  Building the app was an exercies in careful structuring of .js code to ensure that the necessary data was extractable for the final HTML file. Whilst building child functions within a single parent function was the cleanest way to structure the code it means that the data of the different employee groups (manager/engineer/instern, in this example) isn't separable. I would like in the future to make the code more flexible by allowing these employee groups to be called spearately in the HTML. 
 
   ----
 
@@ -32,18 +29,42 @@
   
 
   ## Installation:
-  To install the application in a dev environment simply follow the instructions below: 
-  ``  
-node index.js
+  To use this app you will need to first install node and npm in your local dev environment. 
+
+**Step 1:**
+Install node.js (https://nodejs.dev/en/download/)
+
+**Step 2:** 
+Create and initialize a package.json file by running the following commands in the displayed order (inside the intended directory):
+
+	$ npm init -y
+	$ npm install
 
 
-  ``
+**Step 3:** 
+Install npm's Inquirer module (read more about Inquirer here : https://www.npmjs.com/search?q=inquirer)
+
+	$ npm install inquirer
+
+**Step 4:**
+Install npm's Jest module (read more about Jest here : https://www.npmjs.com/package/jest)
+
+	$ npm install jest
+  
+**Step 5:**
+Install npm's Path module (read more about Path here : https://www.npmjs.com/package/path)
+
+	$ npm install path
 
   ## Usage
-  nothing
-
+  Command-line inputs (driven by `inquire.prompt`) used to gather data
   
-  ![deployed app](../assets/images/deployed-app.png)
+  ![deployed app](./assets/images/terminal.png)
+  
+  
+  Input data collated using JS functions, and outpute as an HTML file with the help of `nmp path` module.
+  
+  ![deployed app](./assets/images/deployed-app.png)
 
 
   ## License
@@ -57,7 +78,12 @@ node index.js
 
 
   ## Test
-  To test the app run the following command from the app directory:
+  To run the Jest tests run the following command from the app directory:
+  ~~~
+  npm test
+  ~~~
+  
+  To test the app functionality run the following command from the app directory:
   ~~~
   node index.js
   ~~~
@@ -69,4 +95,4 @@ node index.js
 
 
   ## Credits
-  With thanks to ...
+  - 
