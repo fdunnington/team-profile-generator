@@ -11,7 +11,7 @@
   The team-profile generator was a project built to demonstrate the use of Node.js to develop a command-line application that takes user-input data and    outputs an HTML file that can be viewed in the browser. The generator was also an exercise in OOP, where the .js code was written in order to pass the pre-determined Jest tests.
 
   ### Learnings
-  Building the app required careful structuring of .js code to ensure that the necessary data was extractable for the final HTML file. Whilst building child functions within a single parent function was the cleanest way to structure the code it means that the data of the different employee groups (manager/engineer/instern, in this example) isn't separable. I would like in the future to make the code more flexible by allowing these employee groups to be called spearately in the HTML. 
+  Building the app required careful structuring of .js code to ensure that the necessary data was extractable for the final HTML file. Whilst building child functions within a single parent function was the cleanest way to structure the code it means that the data of the different employee groups (manager/engineer/intern, in this example) isn't separable. I would like in the future to make the code more flexible by allowing these employee groups to be called separately in the HTML. 
 
   ----
 
